@@ -1,5 +1,27 @@
 # Time Tracker - Employee Monitoring System
 
+## 🌐 Live Demo
+
+**Web Admin Panel**: [inciteful-webapp.onrender.com](https://inciteful-webapp.onrender.com)
+
+**Desktop App**: Download from Github Releases
+
+### Demo Credentials
+
+**Admin Account (Web App)**:
+
+- Email: `9gaurish@gmail.com`
+- Password: `password123`
+- Access: Full admin dashboard with employee management and monitoring
+
+**Employee Account (Desktop App)**:
+
+- Email: `1gaurishsood@gmail.com`
+- Password: `password123`
+- Access: Time tracking, task management, and screenshot capture
+
+---
+
 ## Project Overview
 
 This project is a comprehensive employee time tracking and monitoring system designed to provide real-time workforce management with automated screenshot capture, task assignment, and detailed activity analytics. The system consists of three interconnected applications: a cross-platform desktop Electron app for employees, a web-based admin dashboard for management, and a robust Node.js backend API with MongoDB database.
@@ -21,28 +43,6 @@ The system is specifically optimized for remote work environments, providing emp
 - **Freelancer Management**: Monitor independent contractors and project-based workers
 - **Time Billing**: Accurate time tracking for client billing and project cost analysis
 - **Employee Analytics**: Detailed insights into work patterns and productivity metrics
-
----
-
-## 🌐 Live Demo
-
-**Web Admin Panel**: [inciteful-webapp.onrender.com](https://inciteful-webapp.onrender.com)
-
-**Desktop App**: Download from Github Releases
-
-### Demo Credentials
-
-**Admin Account (Web App)**:
-
-- Email: `9gaurish@gmail.com`
-- Password: `password123`
-- Access: Full admin dashboard with employee management and monitoring
-
-**Employee Account (Desktop App)**:
-
-- Email: `1gaurishsood@gmail.com`
-- Password: `password123`
-- Access: Time tracking, task management, and screenshot capture
 
 ---
 
