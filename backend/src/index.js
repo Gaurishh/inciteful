@@ -30,7 +30,7 @@ app.use('/api/auth', authRouter);
 
 // Connect to MongoDB and start server
 const PORT = process.env.PORT || 4000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/mercor_timetracker';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/timetracker';
 
 console.log('Connecting to MongoDB at:', MONGO_URI);
 console.log('Server will run on port:', PORT);

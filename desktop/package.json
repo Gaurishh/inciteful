@@ -5,7 +5,7 @@
   "homepage": "./",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gaurishh/mercor_p1.git"
+    "url": "https://github.com/Gaurishh/timetracker.git"
   },
   "scripts": {
     "start": "concurrently \"npm run start:react\" \"npm run start:electron\"",
@@ -18,8 +18,8 @@
     "build:linux": "npm run build:react && electron-packager . \"Inciteful\" --platform=linux --arch=x64 --out=dist --overwrite --icon=assets/icon.png --prune=true"
   },
   "build": {
-    "appId": "com.mercor.p1",
-    "productName": "Mercor p1",
+    "appId": "com.timetracker.p1",
+    "productName": "Time Tracker",
     "directories": {
       "output": "dist"
     },
@@ -81,7 +81,7 @@
     "publish": {
       "provider": "github",
       "owner": "Gaurishh",
-      "repo": "mercor_p1"
+      "repo": "timetracker"
     }
   },
   "dependencies": {

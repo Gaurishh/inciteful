@@ -3,7 +3,7 @@ const TimeLog = require('../models/TimeLog');
 
 const router = express.Router();
 
-// GET / - Get time logs by employeeId
+// GET / - Get time logs by Id
 router.get('/', async (req, res) => {
   try {
     const { employeeId } = req.query;

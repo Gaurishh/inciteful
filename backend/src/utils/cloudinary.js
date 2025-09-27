@@ -10,7 +10,7 @@ const uploadToCloudinary = async (filePath, options = {}) => {
   try {
     const result = await cloudinary.uploader.upload(filePath, {
       upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
-      folder: 'mercor_p1_screenshots',
+      folder: 'timetracker_screenshots',
       resource_type: 'image',
       transformation: [
         { quality: 'auto:good' },  // Automatic quality optimization

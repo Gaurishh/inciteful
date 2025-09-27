@@ -11,7 +11,7 @@ const getVerificationEmail = (name, token) => {
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
-        <h2 style="color: #007bff; margin-bottom: 20px; text-align: center;">Welcome to Mercor Time Tracker!</h2>
+        <h2 style="color: #007bff; margin-bottom: 20px; text-align: center;">Welcome to Time Tracker!</h2>
         
         <p>Hi ${name},</p>
         
@@ -29,7 +29,7 @@ const getVerificationEmail = (name, token) => {
         <p>If you didn't create an account, you can safely ignore this email.</p>
         
         <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
-        <p style="font-size: 12px; color: #666; text-align: center;">This is an automated message from Mercor Time Tracker.</p>
+        <p style="font-size: 12px; color: #666; text-align: center;">This is an automated message from Time Tracker.</p>
       </div>
     </body>
     </html>
@@ -67,7 +67,7 @@ const getPasswordResetEmail = (name, token) => {
         <p>If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.</p>
         
         <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
-        <p style="font-size: 12px; color: #666; text-align: center;">This is an automated message from Mercor Time Tracker.</p>
+        <p style="font-size: 12px; color: #666; text-align: center;">This is an automated message from Time Tracker.</p>
       </div>
     </body>
     </html>

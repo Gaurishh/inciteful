@@ -1,4 +1,4 @@
-// Modern Design System for Mercor Admin Dashboard
+// Modern Design System for Admin Dashboard
 
 // Color Palette
 export const colors = {

@@ -1,4 +1,4 @@
-// Modern Design System for Mercor Desktop App
+// Modern Design System for Desktop App
 
 // Color Palette
 export const colors = {

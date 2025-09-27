@@ -568,9 +568,9 @@ const Projects = () => {
               display: 'grid',
               gap: spacing[4],
             }}>
-              {(selected?.taskIds || []).map((taskId, index) => (
+              {editTasks.map((task, index) => (
                 <div
-                  key={taskId}
+                  key={task._id || task.id}
                   style={{
                     padding: spacing[4],
                     background: colors.gray[50],
@@ -595,16 +595,53 @@ const Projects = () => {
                       fontWeight: typography.fontWeight.medium,
                       color: colors.gray[700],
                     }}>
-                      Task {index + 1}
+                      {task.name || `Task ${index + 1}`}
                     </span>
                   </div>
                   <p style={{
                     fontSize: typography.fontSize.sm,
                     color: colors.gray[600],
                     margin: 0,
+                    marginBottom: spacing[2],
                   }}>
-                    {taskId}
+                    {task.description || 'No description'}
                   </p>
+                  {task.employeeIds && task.employeeIds.length > 0 && (
+                    <div>
+                      <p style={{
+                        fontSize: typography.fontSize.xs,
+                        color: colors.gray[500],
+                        margin: 0,
+                        marginBottom: spacing[1],
+                      }}>
+                        Assigned to:
+                      </p>
+                      <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: spacing[1],
+                      }}>
+                        {task.employeeIds.map(employeeId => {
+                          const employee = employees.find(emp => emp._id === employeeId);
+                          return (
+                            <span
+                              key={employeeId}
+                              style={{
+                                fontSize: typography.fontSize.xs,
+                                padding: `${spacing[1]} ${spacing[2]}`,
+                                background: colors.primary[100],
+                                color: colors.primary[700],
+                                borderRadius: borderRadius.full,
+                                fontWeight: typography.fontWeight.medium,
+                              }}
+                            >
+                              {employee ? `${employee.firstName} ${employee.lastName}` : 'Unknown Employee'}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

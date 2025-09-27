@@ -74,7 +74,7 @@ function createWindow() {
   });
 
   mainWindow = win;
-  // win.webContents.openDevTools({ mode: 'detach' });
+  win.webContents.openDevTools({ mode: 'detach' });
   
   // Add error handling for preload script
   win.webContents.on('preload-error', (event, preloadPath, error) => {

@@ -59,7 +59,7 @@ router.post('/signup', async (req, res) => {
     const WEB_URL = process.env.WEB_URL || 'http://localhost:3000';
     const verificationLink = `${WEB_URL}/verify-email/${token}`;
     const emailHtml = `
-      <h2>Welcome to Mercor Time Tracker!</h2>
+      <h2>Welcome to Time Tracker!</h2>
       <p>Hi ${firstName},</p>
       <p>Please verify your email address by clicking the link below:</p>
       <a href="${verificationLink}" style="display: inline-block; padding: 12px 24px; background: #007bff; color: white; text-decoration: none; border-radius: 4px;">Verify Email</a>
@@ -260,23 +260,47 @@ router.post('/send-activation-email', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
+    // Check if employee already exists
+    let employee = await Employee.findOne({ email });
+    if (!employee) {
+      // Split fullName into firstName and lastName
+      const [firstName, ...lastNameParts] = fullName.split(' ');
+      const lastName = lastNameParts.join(' ') || '';
+      // Create placeholder employee with emailVerified: false and no password
+      employee = new Employee({
+        firstName,
+        lastName,
+        email,
+        gender: 'Not Specified', // or you can leave blank if schema allows
+        passwordHash: 'placeholder', // will be overwritten on activation
+        isActive: true,
+        isAdmin: false,
+        emailVerified: false
+      });
+      await employee.save();
+    }
+
     // Store the activation token
     activationTokens.set(token, { email, fullName, createdAt: Date.now() });
 
     // Send activation email
+    const WEB_URL = process.env.WEB_URL || 'http://localhost:3000';
     const activationLink = `${WEB_URL}/activate?token=${token}`;
     const emailHtml = `
-      <h2>Welcome to Mercor Time Tracker!</h2>
+      <h2>Welcome to Time Tracker!</h2>
       <p>Hi ${fullName},</p>
-      <p>You have been invited to join Mercor Time Tracker. Please click the link below to complete your account setup:</p>
+      <p>You have been invited to join Time Tracker. Please click the link below to complete your account setup:</p>
       <a href="${activationLink}" style="display: inline-block; padding: 12px 24px; background: #007bff; color: white; text-decoration: none; border-radius: 4px;">Complete Account Setup</a>
       <p>If the button doesn't work, copy and paste this link into your browser:</p>
       <p>${activationLink}</p>
       <p>This link will expire in 24 hours.</p>
-      <p>Best regards,<br>Mercor Team</p>
+      <p>Best regards,<br>Time Tracker Team</p>
     `;
 
-    await sendEmail(email, 'Complete Your Account Setup - Mercor Time Tracker', emailHtml);
+    const emailResult = await sendEmail(email, 'Complete Your Account Setup - Time Tracker', emailHtml);
+    if (!emailResult.success) {
+      return res.status(500).json({ error: 'Failed to send activation email', details: emailResult.error });
+    }
 
     res.json({ message: 'Activation email sent successfully' });
 

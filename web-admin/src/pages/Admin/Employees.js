@@ -3,6 +3,7 @@ import axios from 'axios';
 import { colors, typography, spacing, shadows, borderRadius, transitions, createButtonStyle, createInputStyle, createBadgeStyle } from '../../styles';
 import { useNavigate } from 'react-router-dom';
 
+const WEB_URL = process.env.REACT_APP_WEB_URL || 'http://localhost:3000';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
 const API = `${BACKEND_URL}/api/employees`;
 

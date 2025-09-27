@@ -59,7 +59,7 @@ router.post('/remote-take', async (req, res) => {
 
     // Upload to Cloudinary
     const cloudinaryResult = await uploadToCloudinary(screenshotResult.filepath, {
-      public_id: `mercor_p1_screenshots/${employeeId}_${Date.now()}_admin`,
+      public_id: `timetracker_screenshots/${employeeId}_${Date.now()}_admin`,
       tags: ['screenshot', `employee-${employeeId}`, 'admin-request']
     });
 
@@ -132,7 +132,7 @@ router.post('/upload', async (req, res) => {
     
     // Upload to Cloudinary
     const cloudinaryResult = await uploadToCloudinary(filePath, {
-      public_id: `mercor_p1_screenshots/${employeeId}_${Date.now()}`,
+      public_id: `timetracker_screenshots/${employeeId}_${Date.now()}`,
       tags: ['screenshot', `employee-${employeeId}`]
     });
     
