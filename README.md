@@ -24,6 +24,28 @@ The system is specifically optimized for remote work environments, providing emp
 
 ---
 
+## 🌐 Live Demo
+
+**Web Admin Panel**: [inciteful-webapp.onrender.com](https://inciteful-webapp.onrender.com)
+
+**Desktop App**: Download from Github Releases
+
+### Demo Credentials
+
+**Admin Account (Web App)**:
+
+- Email: `9gaurish@gmail.com`
+- Password: `password123`
+- Access: Full admin dashboard with employee management and monitoring
+
+**Employee Account (Desktop App)**:
+
+- Email: `1gaurishsood@gmail.com`
+- Password: `password123`
+- Access: Time tracking, task management, and screenshot capture
+
+---
+
 ## System Architecture Overview
 
 | Component                  | Technology Stack                      | Purpose                                                                            |
@@ -35,14 +57,6 @@ The system is specifically optimized for remote work environments, providing emp
 | **Cloud Storage**          | Cloudinary CDN                        | Optimized image storage and delivery for screenshots with compression              |
 | **Email Service**          | SMTP with Nodemailer                  | Employee invitations, password resets, and system notifications                    |
 | **Security Layer**         | bcryptjs, JWT tokens, IP/MAC tracking | Authentication, authorization, and device security monitoring                      |
-
----
-
-## 🌐 Live Demo
-
-**Web Admin Panel**: [inciteful-webapp.onrender.com](https://inciteful-webapp.onrender.com)
-
-**Desktop App**: Download from [GitHub Releases](https://github.com/your-username/timetracker/releases)
 
 ---
 
